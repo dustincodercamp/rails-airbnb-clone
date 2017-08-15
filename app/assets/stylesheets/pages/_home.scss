@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+.banner {
+  height: 100vh;
+  width: 100%;
+  background-image: url('floor_spotlight.jpg');
+  color: #B3B3B6;
+  text-align: center;
+}
+
+.form {
+  padding: 100px;
+}
+
+.form-inline {
+  margin-top: 84px;
+}
+
+.margin-form {
+  margin-top: 104px;
+}
