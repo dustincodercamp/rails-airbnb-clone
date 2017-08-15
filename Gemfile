@@ -26,5 +26,6 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# Custom gems
+# Custom gems - (anytime you add gem, run bundle)
 gem 'devise'
+gem 'omniauth-facebook'
