@@ -19,8 +19,6 @@ Devise.setup do |config|
   config.mailer_sender = 'contact@suitup.com'
 
   # custom add, declaring provider
-
-
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
