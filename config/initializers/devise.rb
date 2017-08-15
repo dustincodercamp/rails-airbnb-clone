@@ -19,8 +19,6 @@ Devise.setup do |config|
   config.mailer_sender = 'contact@suitup.com'
 
   # custom add, declaring provider
-  config.omniauth :facebook, "1932163060136448", "cbfcda8fee256c4934c6e10c1e3deb0d"
-
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
