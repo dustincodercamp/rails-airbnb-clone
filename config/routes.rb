@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :items
+
   devise_for :users,
   # custom added FB Callback
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
