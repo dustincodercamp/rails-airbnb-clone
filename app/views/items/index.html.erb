@@ -1,9 +1,7 @@
 <div class="map-wrapper">
   <div class="container">
 
-    <div class="map">
-      mapa
-    </div>
+     <div class="map" id="map" style="height: 100vh; width: 600px;"></div>
 
     <div class="cards_container">
      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
@@ -50,6 +48,25 @@
 
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
+
   <!-- <div class="row"> -->
   <!--   <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
@@ -101,6 +118,8 @@
         <a class="card-link" href="#" ></a>
       </div>
     </div>
+
+
 
   </div>
 </div>
