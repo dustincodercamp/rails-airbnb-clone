@@ -21,7 +21,34 @@
           <option value="5">XL</option>
         </select>
         <input type="text" class="form-control input-lg" placeholder="Where?" name="location">
-        <input type="text" class="form-control input-lg" placeholder="When?">
+
+
+
+        <!-- <input type="text" class="form-control input-lg" placeholder="When?"> -->
+        <!-- trying to add calendar -->
+        <div class="form-group">
+                <div class='input-group date datetimepicker' id='datetimepicker1'>
+                    <input type='text' class="form-control" placeholder="Date & Time" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+        <% content_for(:after_js) do %>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker1').datetimepicker({
+                        locale: 'en'
+                    });
+                });
+            </script>
+        <% end %>
+
+</div>
+
+
+
+
+
         <input type="submit" class="btn btn-primary btn-lg" value="Search">
       </form>
 
