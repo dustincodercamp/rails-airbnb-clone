@@ -4,9 +4,13 @@
 @import "footer";
 
 
-.container {
+.map-wrapper {
+  min-height: calc(100vh - 124px);
+}
+
+.map-wrapper > .container {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 600px;
 }
 .cards_container {
   display: grid;
@@ -61,3 +65,5 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+
