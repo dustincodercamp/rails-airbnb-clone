@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "items/listing", to: "items#listing"
+
   resources :items
 
   devise_for :users,
