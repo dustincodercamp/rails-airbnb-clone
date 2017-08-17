@@ -6,7 +6,7 @@
       </div>
 
       <h3>Look good for your special occasion</h3>
-      <h3>Make $$$ renting your fancy closet garments</h3>
+      <h3>Make money renting your closet garments</h3>
 
       <form action="/items" method="get" class="form-inline">
         <select name="" id="" class="form-control input-lg">
@@ -27,23 +27,38 @@
         <!-- <input type="text" class="form-control input-lg" placeholder="When?"> -->
         <!-- trying to add calendar -->
         <div class="form-group">
-                <div class='input-group date datetimepicker' id='datetimepicker1'>
-                    <input type='text' class="form-control" placeholder="Date & Time" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-        <% content_for(:after_js) do %>
-            <script type="text/javascript">
-                $(function () {
-                    $('#datetimepicker1').datetimepicker({
-                        locale: 'en'
-                    });
-                });
-            </script>
-        <% end %>
+          <div class='input-group date datetimepicker' id='datetimepicker1'>
+            <input type='text' class="form-control input-lg" placeholder="Date & Time" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+          <% content_for(:after_js) do %>
+          <script type="text/javascript">
+            $(function () {
+              $('#datetimepicker1').datetimepicker({
+                locale: 'en'
+              });
+            });
+          </script>
+          <% end %>
 
-</div>
+           <div class='input-group date datetimepicker' id='datetimepicker1'>
+            <input type='text' class="form-control input-lg" placeholder="Date & Time" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+          <% content_for(:after_js) do %>
+          <script type="text/javascript">
+            $(function () {
+              $('#datetimepicker1').datetimepicker({
+                locale: 'en'
+              });
+            });
+          </script>
+          <% end %>
+        </div>
 
 
 
