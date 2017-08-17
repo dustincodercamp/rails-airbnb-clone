@@ -8,28 +8,28 @@
 
 infos = [
   {
-    name: "Green Suit",
+    name: "Gray Suit",
     description: "Perfect for any occasion",
     size: "M",
     price: 300,
     address: "3950 Fairsted Drive, Raleigh"
   },
   {
-    name: "Violet Suit",
+    name: "Black Suit",
     description: "Best suit for bodyguarding",
     size: "XL",
     price: 250,
     address: "6616 English Ivy Lane, Raleigh"
   },
   {
-    name: "Red Suit",
+    name: "White Suit",
     description: "Zoot suit riot, RIOT",
     size: "XS",
     price: 325,
     address: "2220 Raven Road #107, Raleigh"
   },
   {
-    name: "Blue Suit",
+    name: "Pink Suit",
     description: "Blend in with any Flamingo",
     size: "L",
     price: 500,
