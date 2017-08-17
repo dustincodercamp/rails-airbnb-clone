@@ -1,2 +1,44 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @item.size %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @item.price %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @item.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @item.longitude %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @item.address %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

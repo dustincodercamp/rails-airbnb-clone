@@ -8,31 +8,45 @@
       <h3>Look good for your special occasion</h3>
       <h3>Make money renting your closet garments</h3>
 
-      <form action="/items" method="get" class="form-inline">
+      <%= form_for @item, url: items_path, html: { method: "get", class: "form-control input-lg"} do |f| %>
+        <%= f.select :category, options_for_select(Item::CATEGORIES) %>
+        <%= f.select :size, options_for_select(Item::SIZES) %>
+        <%= text_field_tag :location, "", class: "input-lg",  placeholder: "Where?" %>
+
+        <div class="form-group">
+          <div class='input-group date datetimepicker' id='datetimepicker1'>
+            <%= text_field_tag :start_date, "", class: "input-lg",  placeholder: "Pickup date?"  %>
+          </div>
+          <div class='input-group date datetimepicker' id='datetimepicker2'>
+            <%= text_field_tag :end_date, "", class: "input-lg",  placeholder: "Pickup date?"  %>
+          </div>
+        </div>
+        <%= f.submit "Search", class: "btn btn-primary btn-lg" %>
+      <% end %>
+
+      <!-- <form action="/items" method="get" class="form-inline">
         <select name="" id="" class="form-control input-lg">
           <option value="1">Dresses</option>
           <option value="2">Suits</option>
-        </select>
-        <select name="" id="Size" class="form-control input-lg">
+        </select> -->
+       <!--  <select name="" id="Size" class="form-control input-lg">
           <option value="1">XS</option>
           <option value="2">S</option>
           <option value="3">M</option>
           <option value="4">L</option>
           <option value="5">XL</option>
-        </select>
-        <input type="text" class="form-control input-lg" placeholder="Where?" name="location">
-
+        </select> -->
 
 
         <!-- <input type="text" class="form-control input-lg" placeholder="When?"> -->
         <!-- trying to add calendar -->
-        <div class="form-group">
+        <!-- <div class="form-group">
           <div class='input-group date datetimepicker' id='datetimepicker1'>
             <input type='text' class="form-control input-lg" placeholder="Date & Time" />
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
-          </div>
+          </div> -->
           <% content_for(:after_js) do %>
           <script type="text/javascript">
             $(function () {
@@ -43,32 +57,32 @@
           </script>
           <% end %>
 
-           <div class='input-group date datetimepicker' id='datetimepicker1'>
+           <!-- <div class='input-group date datetimepicker' id='datetimepicker1'>
             <input type='text' class="form-control input-lg" placeholder="Date & Time" />
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
-          </div>
+          </div> -->
           <% content_for(:after_js) do %>
           <script type="text/javascript">
             $(function () {
-              $('#datetimepicker1').datetimepicker({
+              $('#datetimepicker2').datetimepicker({
                 locale: 'en'
               });
             });
           </script>
           <% end %>
-        </div>
+        <!-- </div> -->
 
 
 
 
 
-        <input type="submit" class="btn btn-primary btn-lg" value="Search">
-      </form>
+       <!--  <input type="submit" class="btn btn-primary btn-lg" value="Search">
+      </form> -->
 
-      </div>
-
+<!--       </div>
+ -->
     </div>
   </div>
 </div>
