@@ -8,8 +8,6 @@
       <h3>Look good for your special occasion</h3>
       <h3>Make money renting your closet garments</h3>
 
-
-
       <%= form_tag items_path, method: "get", class: "form-control input-lg" do %>
         <%= select_tag :category, options_for_select(Item::CATEGORIES) %>
         <%= select_tag :size, options_for_select(Item::SIZES) %>
@@ -26,65 +24,26 @@
         <%= submit_tag "Search", class: "btn btn-primary btn-lg" %>
       <% end %>
 
-      <!-- <form action="/items" method="get" class="form-inline">
-        <select name="" id="" class="form-control input-lg">
-          <option value="1">Dresses</option>
-          <option value="2">Suits</option>
-        </select> -->
-       <!--  <select name="" id="Size" class="form-control input-lg">
-          <option value="1">XS</option>
-          <option value="2">S</option>
-          <option value="3">M</option>
-          <option value="4">L</option>
-          <option value="5">XL</option>
-        </select> -->
-
-
-        <!-- <input type="text" class="form-control input-lg" placeholder="When?"> -->
-        <!-- trying to add calendar -->
-        <!-- <div class="form-group">
-          <div class='input-group date datetimepicker' id='datetimepicker1'>
-            <input type='text' class="form-control input-lg" placeholder="Date & Time" />
-              <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-              </span>
-          </div> -->
-          <% content_for(:after_js) do %>
-          <script type="text/javascript">
-            $(function () {
-              $('#datetimepicker1').datetimepicker({
-                locale: 'en'
-              });
+      <% content_for(:after_js) do %>
+        <script type="text/javascript">
+          $(function () {
+            $('#datetimepicker1').datetimepicker({
+              locale: 'en'
             });
-          </script>
-          <% end %>
+          });
+        </script>
+      <% end %>
 
-           <!-- <div class='input-group date datetimepicker' id='datetimepicker1'>
-            <input type='text' class="form-control input-lg" placeholder="Date & Time" />
-              <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-              </span>
-          </div> -->
-          <% content_for(:after_js) do %>
-          <script type="text/javascript">
-            $(function () {
-              $('#datetimepicker2').datetimepicker({
-                locale: 'en'
-              });
+      <% content_for(:after_js) do %>
+        <script type="text/javascript">
+          $(function () {
+            $('#datetimepicker2').datetimepicker({
+              locale: 'en'
             });
-          </script>
-          <% end %>
-        <!-- </div> -->
+          });
+        </script>
+      <% end %>
 
-
-
-
-
-       <!--  <input type="submit" class="btn btn-primary btn-lg" value="Search">
-      </form> -->
-
-<!--       </div>
- -->
     </div>
   </div>
 </div>

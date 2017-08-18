@@ -12,7 +12,7 @@
 
 <p>
   <strong>Size:</strong>
-  <%= @item.size %>
+  <%= Item::SIZES.key(@item.size.to_i) %>
 </p>
 
 <p>
@@ -37,7 +37,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @item.category %>
+  <%= Item::CATEGORIES.key(@item.category.to_i) %>
 </p>
 
 <% if current_user == @item.owner %>
