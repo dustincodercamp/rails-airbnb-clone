@@ -8,20 +8,22 @@
       <h3>Look good for your special occasion</h3>
       <h3>Make money renting your closet garments</h3>
 
-      <%= form_for @item, url: items_path, html: { method: "get", class: "form-control input-lg"} do |f| %>
-        <%= f.select :category, options_for_select(Item::CATEGORIES) %>
-        <%= f.select :size, options_for_select(Item::SIZES) %>
+
+
+      <%= form_tag items_path, method: "get", class: "form-control input-lg" do %>
+        <%= select_tag :category, options_for_select(Item::CATEGORIES) %>
+        <%= select_tag :size, options_for_select(Item::SIZES) %>
         <%= text_field_tag :location, "", class: "input-lg",  placeholder: "Where?" %>
 
         <div class="form-group">
           <div class='input-group date datetimepicker' id='datetimepicker1'>
-            <%= text_field_tag :start_date, "", class: "input-lg",  placeholder: "Pickup date?"  %>
+            <%= text_field_tag :pick_up, "", class: "input-lg",  placeholder: "Pickup date?"  %>
           </div>
           <div class='input-group date datetimepicker' id='datetimepicker2'>
-            <%= text_field_tag :end_date, "", class: "input-lg",  placeholder: "Pickup date?"  %>
+            <%= text_field_tag :drop_off, "", class: "input-lg",  placeholder: "Pickup date?"  %>
           </div>
         </div>
-        <%= f.submit "Search", class: "btn btn-primary btn-lg" %>
+        <%= submit_tag "Search", class: "btn btn-primary btn-lg" %>
       <% end %>
 
       <!-- <form action="/items" method="get" class="form-inline">
