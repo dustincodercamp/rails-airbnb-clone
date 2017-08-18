@@ -8,12 +8,15 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    # @items = Item.all
+    @items = Item.all
+
     if params[:location].present?
-      @items = Item.near(params[:location], 10)
+      @items = @items.near(params[:location], 20)
     else
-      @items = Item.where.not(latitude: nil, longitude: nil)
+      @items = @items.where.not(latitude: nil, longitude: nil)
     end
+
+    @items = @items.where(item_params)
 
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
