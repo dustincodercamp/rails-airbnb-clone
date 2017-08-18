@@ -40,5 +40,7 @@
   <%= @item.category %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
+<% if current_user == @item.owner %>
+  <%= link_to 'Edit', edit_item_path(@item) %> |
+<% end %>
 <%= link_to 'Back', items_path %>
