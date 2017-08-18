@@ -16,7 +16,12 @@ class ItemsController < ApplicationController
       @items = @items.where.not(latitude: nil, longitude: nil)
     end
 
-    @items = @items.where(item_params)
+    search_params = params.slice("category", "size")
+
+    if !search_params.empty?
+      search_params.permit!
+      @items = @items.where(search_params)
+    end
 
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
